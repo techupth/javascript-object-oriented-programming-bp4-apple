@@ -12,7 +12,12 @@ class PostList {
         this.posts = posts || [];
     } 
     addPost(post) {
-        this.posts.push(post);
+        this.posts.push({
+          id: this.posts.length + 1,
+          title: post.title,
+          content: post.content,
+          comments: post.comments,
+        });
     }
     sharePost(postTitle) {
         console.log(`You've shared post ${postTitle} to your friend.`)
@@ -72,7 +77,7 @@ class notification {
     constructor (id) {
         this.id = id;
     }
-    send() {
-        console.log(`Notification: ${this.commentCreatedBy} has just commented on this post—"${this.postTitle}"`);
+    send(comment, post) {
+        console.log(`Notification: ${comment.createdBy.name} has just commented on this post—"${post.title}"`);
     }
 }

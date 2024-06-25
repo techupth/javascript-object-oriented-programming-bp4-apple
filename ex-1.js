@@ -22,8 +22,8 @@ class SMSNotification {
     }
 }
 
-const emailNotification = new EmailNotification("1", "2024-06-25 09:00", "Hello, this is an email notification", "example@example.com");
-const smsNotification = new SMSNotification("2", "2024-06-25 10:00", "Hello, this is an SMS notification", "1234567890");
+const emailNotification = new EmailNotification(1, "2024-06-25 09:00", "Hello, this is an email notification", "example@example.com");
+const smsNotification = new SMSNotification(2, "2024-06-25 10:00", "Hello, this is an SMS notification", "1234567890");
 
 emailNotification.send(); 
 smsNotification.send(); 

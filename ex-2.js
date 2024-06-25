@@ -18,17 +18,13 @@ class EmailNotification extends Notification {
  }
 
 class SMSNotification extends Notification { 
-    constructor(notificationId, createdTime, content, receiver, phoneNumber) {
+    constructor(notificationId, createdTime, content, receiver) {
         super(notificationId, createdTime, content, receiver);
-        this.phoneNumber = phoneNumber;
-    }
-    send() {
-        console.log(`Notification has been sent to ${this.phoneNumber}`);
     }
 }
 
-const emailNotification = new EmailNotification("1", "2024-06-25 09:00", "Hello, this is an email notification", "example@example.com");
-const smsNotification = new SMSNotification("2", "2024-06-25 10:00", "Hello, this is an SMS notification", "example@example.com", "1234567890");
+const emailNotification = new EmailNotification(1, "2024-06-25 09:00", "Hello, this is an email notification", "example@example.com");
+const smsNotification = new SMSNotification(2, "2024-06-25 10:00", "Hello, this is an SMS notification", "1234567890");
 
 
 emailNotification.send(); 
